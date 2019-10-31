@@ -2,8 +2,8 @@ var myEarthCtrl = angular.module('controllers.login',['ionic.utils']);
 
 myEarthCtrl.controller('loginCtrl', function ($scope, $rootScope, $ionicPopup, $ionicLoading,$state, $ionicModal, $localStorage) {
 
-    if(typeof analytics !== "undefined") {
-        analytics.trackView('Login');
+    if (window.analytics) {
+        window.analytics.setCurrentScreen("Login");
     }
 
     var lastUserEmail = $localStorage.get('lastUserEmail');
@@ -31,6 +31,15 @@ myEarthCtrl.controller('loginCtrl', function ($scope, $rootScope, $ionicPopup, $
                     $scope.closeLogin()
                     $localStorage.set('lastUserEmail', $scope.loginData.username);
 
+                    var user = Parse.User.current();
+                    if (window.analytics) {
+                      window.analytics.setUserProperty("parse_user_id", user.id);
+
+                      window.analytics.logEvent("myearth_login", {
+                        parse_user_id: user.id,
+                      });
+                    }
+
                     $ionicLoading.hide();
                     $state.go('app.timeline');
 
@@ -45,7 +54,7 @@ myEarthCtrl.controller('loginCtrl', function ($scope, $rootScope, $ionicPopup, $
                         template: "<p class= \"center\">Username/Password combination is incorrect.</p>",
                         okText: 'OK'
                     });
-                    
+
                     console.log("login failed: " + error.message);
                 }
             });

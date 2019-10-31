@@ -6,10 +6,9 @@ var paradropCtrl = angular.module('controllers.timeline',[
 paradropCtrl.controller('timelineCtrl',
     function($scope, $ionicModal, $state, $localStorage, $ionicLoading, $ionicPopup, activityModel, $window) {
 
-        if(typeof analytics !== "undefined") {
-            analytics.trackView('Activities');
+        if (window.analytics) {
+            window.analytics.setCurrentScreen("Activities");
         }
-
 
         if (!Parse.User.current().get('activityCount')){
             Parse.Cloud.run('migrateActivityCount', {
@@ -460,10 +459,6 @@ paradropCtrl.controller('timelineCtrl',
                 template: 'Loading...'
             });
 
-            if (typeof analytics !== 'undefined'){
-                analytics.trackEvent('Activity', activityName);
-            }
-
             console.log("---- Do activity ------")
             // Getting the activity from Parse
             var promise = activityModel.getUniqueActivityByName(activityName);
@@ -481,6 +476,24 @@ paradropCtrl.controller('timelineCtrl',
                         okText: 'OK'
                     });
                     $ionicLoading.hide();
+
+                    var carbonSaved = 0;
+                    var waterSaved = 0;
+                    if (category == "Pounds of Carbon") {
+                      carbonSaved = activity.get("points");
+                    } else if (category == "Gallons of Water") {
+                      waterSaved = activity.get("points");
+                    }
+
+                    if (window.analytics) {
+                      window.analytics.logEvent("myearth_activity", {
+                        activity_category: category,
+                        activity_id: activity.id,
+                        activity_name: activityName,
+                        carbon_saved: carbonSaved,
+                        water_saved: waterSaved,
+                      });
+                    }
                 }, function (error) {
                     $ionicPopup.alert({
                         title: error,

@@ -5,8 +5,8 @@ var paradropCtrl = angular.module('controllers.impact',[]);
 paradropCtrl.controller('impactCtrl',
     function($scope, $state, activityDoneList, $ionicModal, $ionicPopup, $ionicLoading) {
 
-    if(typeof analytics !== "undefined") {
-        analytics.trackView('My Impact');
+    if (window.analytics) {
+      window.analytics.setCurrentScreen("My Impact");
     }
 
 		var getTotalPointsSaved = function () {

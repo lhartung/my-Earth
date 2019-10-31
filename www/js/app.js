@@ -48,11 +48,11 @@ app.run(function($ionicPlatform,$rootScope,$state,$http,$cordovaLocalNotificatio
         }
 
 
-        if(typeof analytics !== "undefined") {
-            analytics.startTrackerWithId('UA-61409067-1');
-          console.log('loaded google analytics');
+        if (typeof cordova.plugins.firebase.analytics !== "undefined") {
+            window.analytics = cordova.plugins.firebase.analytics;
+            console.log("Loaded Firebase Analytics.");
         } else {
-          console.log("Google Analytics Unavailable");
+            console.log("Analytics unavailable.");
         }
 
     });

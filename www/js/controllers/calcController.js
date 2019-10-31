@@ -3,8 +3,8 @@ var myEarthCtrl = angular.module('controllers.calc',[]);
 
 myEarthCtrl.controller('calcCtrl', function($scope) {
 
-    if(typeof analytics !== "undefined") {
-    	analytics.trackView('Calculations');
+    if (window.analytics) {
+        window.analytics.setCurrentScreen("Calculations");
     }
 
     $scope.showBrowserPage = function(url) {

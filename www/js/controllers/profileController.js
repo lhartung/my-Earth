@@ -5,9 +5,9 @@ paradropCtrl.controller('profileCtrl',
 
 		$scope.notEnoughData = false;
 
-		if(typeof analytics !== "undefined") {
-    		analytics.trackView('Profile');
-    	}
+    if (window.analytics) {
+        window.analytics.setCurrentScreen("Profile");
+    }
 
 		if (activityDoneList.length == 0) {
 

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "313847499051",
+    "firebase_url": "https://myearth-65e95.firebaseio.com",
+    "project_id": "myearth-65e95",
+    "storage_bucket": "myearth-65e95.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:313847499051:android:1069e6502a60d15b939d6e",
+        "android_client_info": {
+          "package_name": "com.ionicframework.myearthapp496614"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "313847499051-pvfjd34kedsgh4orbfmdsh9epgvfdon1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6uvJFV_8nWTKmhPRxdkvVv4LWDlaLG-4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "313847499051-pvfjd34kedsgh4orbfmdsh9epgvfdon1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
