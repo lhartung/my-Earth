@@ -1,11 +1,16 @@
 {
   "name": "my-Earth",
-  "app_id": "a1219054",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic1",
   "browsers": [
     {
       "platform": "android",
       "browser": "crosswalk",
       "version": "12.41.296.5"
     }
-  ]
+  ],
+  "id": "a1219054",
+  "app_id": ""
 }

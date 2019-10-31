@@ -1,8 +1,12 @@
 Building for Android
 --------------------
 
-1. `cordova platform add android`
-2. `ionic build --release android`
+1. `npm install -g ionic@^3.0.0`
+2. `cordova platform add android`
+3. `cp google-services.json platforms/android/app/`
+4. `ionic cordova build android --prod --release`
+5. `jarsigner -verbose -keystore <keystore file> platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk alias_name`
+6. `zipalign 4 platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk myearth.apk`
 
 
 Debugging with an Android Device
