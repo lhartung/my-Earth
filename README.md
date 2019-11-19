@@ -25,7 +25,7 @@ Building for iOS
 2. `npm install -g cordova@^9.0.0`
 3. `ionic cordova platform add ios`
 4. `open platforms/ios/MyEarth.xcworkspace`
-5. Add the appropriate signing key under the build settings.
+5. Add the appropriate signing key under the "Signing & Capabilities" tab of the project settings.
 6. Use xcode to build and test the app.
 
 
