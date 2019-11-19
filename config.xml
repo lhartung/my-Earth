@@ -2,15 +2,37 @@
 <widget android-versionCode="501001" id="com.ionicframework.myearthapp496614" version="5.1.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>MyEarth</name>
     <description>
-        Developed by John Meurer and Victor Tavares
+        Created by researchers and students at the University of
+        Wisconsin-Madison School of Human Ecology, MyEarth is an
+        application that helps you to track your energy usage and savings.
+
+        Choose activities to perform, check your progress, and track
+        your total impact!
+
+        ## Development team ##
+
+        John Meurer - Lead Engineer
+        Victor Tavares - Mobile Engineer
+        Andy Stevens - Envirometrics Lead
+        Lance Hartung - Parse Migration and Maintenance
+
+        ## Advisors ##
+
+        Nancy Wong - Professor of Human Ecology
+        Suman Banerjee - Professor of Computer Science
+
+        This product is also based on software first developed by Sulabh
+        Agarwal and Kevin Kamel, who gave us full access to their software
+        and codebase. Their contributions are greatly appreciated.
+
+        Please leave a review :). Thank you!
     </description>
-    <author email="jrmeurer@wisc.edu">
-      John Meurer
-  </author>
+    <author email="lhartung@wisc.edu">
+      Lance Hartung
+    </author>
     <content src="index.html" />
-    <access origin="https://app-measurement.com" />
-    <access origin="http://myearthapp.org" />
-    <access origin="https://myearthapp.org" />
+    <access origin="*://app-measurement.com" />
+    <access origin="*://myearthapp.org" />
     <access origin="https://myearth-65e95.firebaseio.com" requires-forward-secrecy="false" />
     <allow-intent href="*://*myearthapp.org/*" />
     <allow-navigation href="*://*myearthapp.org/*" />
