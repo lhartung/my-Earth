@@ -104,7 +104,7 @@ paradropCtrl.controller('timelineCtrl',
 
                 $ionicPopup.alert({
                     title: 'Connection Failed',
-                    template: "<p>Please Try Again.</p>",
+                    template: '<p>Please try again later.</p><p>Error '+error.code+': '+error.message+'</p>',
                     okText: 'OK'
                 });
 

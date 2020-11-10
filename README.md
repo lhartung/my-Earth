@@ -5,7 +5,7 @@ Building for Android
 2. `npm install -g cordova@^9.0.0`
 3. `ionic cordova platform add android`
 4. `ionic cordova build android --prod --release`
-5. `jarsigner -verbose -keystore <keystore file> platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk alias_name`
+5. `jarsigner -verbose -keystore my-release-key.keystore platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk alias_name`
 6. `zipalign 4 platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk myearth.apk`
 
 
